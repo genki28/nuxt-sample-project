@@ -1,34 +1,28 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">sample-project</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h1>Home画面</h1>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '@vue/composition-api'
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+// import { axios } from 'axios';
 
-export default Vue.extend({})
+// delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  IconUrl: require("leaflet/dist/images/marker-icon.png"),
+  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+  shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+});
+
+
+export default defineComponent({
+  setup() {
+
+  }
+})
 </script>
 
 <style>
